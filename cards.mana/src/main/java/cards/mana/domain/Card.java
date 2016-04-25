@@ -32,6 +32,7 @@ public class Card {
     @JsonProperty("active")
     private boolean active;
 
+
     public String getClientFirstName() {
         return clientFirstName;
     }
@@ -63,7 +64,6 @@ public class Card {
     public void setPoints(int points) {
         this.points = points;
     }
-
     public int getMinimumRedeemablePoints() {
         return minimumRedeemablePoints;
     }

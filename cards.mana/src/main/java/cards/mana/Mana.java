@@ -16,7 +16,8 @@ public class Mana {
 
     private String apiKey;
     private String authId;
-    private String apiUrl = "https://app.mana.cards/api/v1";
+    private String apiUrl = "https://app.mana.cards/api";
+    private int apiVersion = 1;
 
     private ISaleService saleService;
     private ICardService cardService;
@@ -65,13 +66,28 @@ public class Mana {
     }
 
     public String getApiUrl() {
-        return apiUrl;
+        return apiUrl + "/v" + getApiVersion();
     }
 
     public void setApiUrl(String apiUrl) {
         this.apiUrl = apiUrl;
     }
 
+    public int getApiVersion() {
+        return apiVersion;
+    }
+
+    public void setApiVersion(int apiVersion) {
+        this.apiVersion = apiVersion;
+    }
+
+    public void setSandbox(boolean sandbox){
+        if(sandbox){
+            setApiUrl("https://sandbox.mana.cards/api");
+        }else{
+            setApiUrl("https://app.mana.cards/api");
+        }
+    }
     public ISaleService getSaleService() {
 
         if (saleService == null)
