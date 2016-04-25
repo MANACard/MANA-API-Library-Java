@@ -42,7 +42,7 @@ Shumica e metodave (getters-setters) të klasës `Card` janë vetë-shpjeguese, 
 Për çdo shitje me kartelën MANA, duhet të përdorni klasën Sale. Mëposhtë, mund të gjeni një pjesë kodi, të komentuar në secilin hap.
 
 ```java
-Sale sale = neë Sale();
+Sale sale = new Sale();
 
 // Kjo fushë është opcionale. Me këtë garantohet uniciteti i shitjes në databazën tonë, në mënyrë që të mos regjistrohen shitje duplikate. Nëse nuk e plotësoni këtë fushë, libraria gjeneron një ID automatikisht në prapavijë.
 sale.setId("XYZ");
@@ -50,10 +50,10 @@ sale.setId("XYZ");
 sale.setCardBarcode("MANAxxxxxxx"); // Ketu shkruhet barkodi i karteles se klientit
 
 // Inicializohet lista me artikujt e shitur
-List<SalesLineItem> items = neë ArrayList<SalesLineItem>();
+List<SalesLineItem> items = new ArrayList<SalesLineItem>();
 
 // Per cdo artikull te shitur, krijohet nje instance e klases SalesLineItem
-SalesLineItem item = neë SalesLineItem();
+SalesLineItem item = new SalesLineItem();
 
 // Barkodi apo cfaredo kodi qe ne menyre unike e identifikon produktin ne sistemin tuaj.
 item.setBarcode("XX");
